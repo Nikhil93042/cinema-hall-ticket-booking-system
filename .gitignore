@@ -23,6 +23,9 @@
 *.db
 *.db-journal
 
+# scratch scripts
+scratch/
+
 # misc
 .DS_Store
 *.pem
