@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push --accept-data-loss && npm run seed && next build",
+    "prebuild": "node -e \"const fs=require('fs'); if(!process.env.DATABASE_URL && !fs.existsSync('.env') && fs.existsSync('.env.example')){ fs.copyFileSync('.env.example', '.env'); console.log('Created .env from .env.example'); }\"",
+    "build": "npm run prebuild && prisma generate && prisma db push --accept-data-loss && npm run seed && next build",
     "start": "next start",
     "lint": "next lint",
     "seed": "tsx prisma/seed.ts",
