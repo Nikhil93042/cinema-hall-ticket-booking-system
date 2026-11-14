@@ -3,6 +3,8 @@ import { confirmBooking } from "@/lib/booking-service";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const checkoutSchema = z.object({
   holdToken: z.string().min(1, "Hold token is required"),
   paymentMethod: z.enum(["CARD", "UPI", "NET_BANKING", "SIMULATED"]).default("CARD"),

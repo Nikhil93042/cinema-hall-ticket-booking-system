@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Star, Clock, Calendar, MapPin, Film, Sparkles, ChevronLeft, ShieldCheck, Ticket } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 interface MoviePageProps {
   params: { id: string };
   searchParams?: { date?: string };

@@ -5,6 +5,8 @@ import { Ticket, Film, Calendar, Clock, MapPin, Printer, CheckCircle2, ShieldAle
 import PrintButton from "./PrintButton";
 import QuickValidateButton from "./QuickValidateButton";
 
+export const dynamic = "force-dynamic";
+
 interface TicketPageProps {
   params: { id: string };
 }

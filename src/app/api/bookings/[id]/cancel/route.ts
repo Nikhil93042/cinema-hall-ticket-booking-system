@@ -3,6 +3,8 @@ import { cancelBooking } from "@/lib/booking-service";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const cancelSchema = z.object({
   reason: z.string().min(3, "Please provide a reason for cancellation"),
 });

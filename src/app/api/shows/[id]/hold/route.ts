@@ -3,6 +3,8 @@ import { createSeatHold } from "@/lib/seat-locking";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const holdSchema = z.object({
   seatIds: z.array(z.string()).min(1, "Select at least 1 seat"),
 });

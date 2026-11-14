@@ -3,6 +3,8 @@ import { validateTicket } from "@/lib/booking-service";
 import { getCurrentUser } from "@/lib/auth";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const validateSchema = z.object({
   ticketCode: z.string().min(1, "Ticket code or QR payload required"),
   usherName: z.string().optional(),

@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { releaseSeatHold } from "@/lib/seat-locking";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const releaseSchema = z.object({
   holdToken: z.string().min(1),
 });
