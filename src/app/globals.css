@@ -3,25 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #07090e;
+  --foreground: #f1f5f9;
+  --card: #0d121f;
+  --card-border: #1e293b;
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --accent: #a855f7;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  min-height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Custom Cinema Glow & Animations */
+.cinema-glow {
+  box-shadow: 0 0 50px -10px rgba(139, 92, 246, 0.25);
+}
+
+.cinema-screen-glow {
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.45) 0%, rgba(139, 92, 246, 0) 100%);
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6));
+}
+
+.seat-silver {
+  border-color: #94a3b8;
+}
+
+.seat-gold {
+  border-color: #f59e0b;
+}
+
+.seat-premium {
+  border-color: #ec4899;
+}
+
+/* Print styles for movie tickets */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .ticket-print-container {
+    box-shadow: none !important;
+    border: 2px dashed #000 !important;
+    color: #000 !important;
+    background: #fff !important;
   }
 }
